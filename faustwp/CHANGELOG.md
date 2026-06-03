@@ -1,5 +1,65 @@
 # Faust
 
+## 1.8.9
+
+### Patch Changes
+
+- 139479d: Remove the `Update URI: false` header from `faustwp.php` so WordPress checks wordpress.org for plugin updates. This restores wordpress.org as the canonical update channel for new installs. The 1.8.8 security fix (GHSA-q6pm-r77q-qcv3) — include the IV in the token envelope HMAC to prevent authentication bypass — was reported by ParkHyunWoo (@hwpark6804-gif) via Patchstack.
+
+## 1.8.8
+
+### Patch Changes
+
+- cda00de: fix[faustwp]: include the IV in the token envelope HMAC to prevent authentication bypass via IV bit-flipping (GHSA-q6pm-r77q-qcv3)
+
+## 1.8.7
+
+### Patch Changes
+
+- ca1e2f4: fix[faustwp]: update documentation links in settings page to use current URL structure
+
+## 1.8.6
+
+### Patch Changes
+
+- 56dfa51: - Updated `phpstan/phpstan` from 1.10.55 to 1.12.33
+  - Updated `psy/psysh` from v0.12.7 to v0.12.19
+  - Updated `phpunit/phpunit` from 9.6.22 to 9.6.33
+  - Updated `symfony/process` from v6.4.15 to v6.4.33
+
+## 1.8.5
+
+### Patch Changes
+
+- 6bf8a7e: Add WordPress 6.9 to the CI test matrix and update the plugin "Tested up to" header to 6.9.
+
+## 1.8.4
+
+### Patch Changes
+
+- 5ce074a: Tested Faust on WordPress 6.8.1
+- 8684b83: Fixed issue in content_replacement when site_url() contains port
+
+## 1.8.3
+
+### Patch Changes
+
+- 089ea0a: Fix for adding assets to the correct release for Github Actions.
+  Small fix for Github actions to upload assets to the correct release
+
+## 1.8.2
+
+### Patch Changes
+
+- b1898f8: Fix for adding assets to the correct release for Github Actions.
+
+## 1.8.1
+
+### Patch Changes
+
+- 700f96e: bug: Fixes for Github workflow for faustwp releases. Added WPE info.json and automated for the release.
+- 134f823: Added minor fixes for release process.
+
 ## 1.8.0
 
 ### Minor Changes
@@ -62,6 +122,12 @@
 ### Minor Changes
 
 - 28f1f83: Added new filter `faustwp_public_redirect_status_code`, allowing WordPress plugins and themes to choose the [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) to use when generating redirects when the [enable public route redirects](https://faustjs.org/docs/faustwp/settings#enabling-public-route-redirects) setting is active.
+
+## 1.5.0
+
+### Minor Changes
+
+- 011cd931: - Added a custom PluginUpdater class to enable FaustWP plugin updates from an external API endpoint.
 
 ## 1.4.1
 

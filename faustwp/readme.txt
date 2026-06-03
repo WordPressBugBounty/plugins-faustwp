@@ -2,8 +2,8 @@
 Contributors: antpb, apmatthe, blakewpe, chriswiegman, claygriffiths, colin-murphy, jasonkonen, joefusco, markkelnar, matthewguywright, mindctrl, modernnerd, rfmeier, TeresaGobble, thdespou, wpengine,
 Tags: faustjs, faust, headless, decoupled, composable-architecture
 Requires at least: 5.7
-Tested up to: 6.7.2
-Stable tag: 1.8.0
+Tested up to: 6.9
+Stable tag: 1.8.9
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -54,25 +54,22 @@ plugins/faustwp/.wordpress-org/screenshot-3.png
 
 == Changelog ==
 
-= 1.8.0 =
-
-### Minor Changes
-
-- aedd100: chore: Updated FaustWP to create a preview link for all draft post types.
-
-  Removed actions `rest_prepare_post` and `rest_prepare_page` from the callback functions.
-  Added a new action for `rest_api_init` to add `rest_prepare_{$post_type}` action for all publicably queryable post types including custom post types.
-
-= 1.7.5 =
+= 1.8.9 =
 
 ### Patch Changes
 
-- 413fe9a: Added tested up to WordPress 6.7.2 for the FaustWP plugin.
+- 139479d: Remove the `Update URI: false` header from `faustwp.php` so WordPress checks wordpress.org for plugin updates. This restores wordpress.org as the canonical update channel for new installs. The 1.8.8 security fix (GHSA-q6pm-r77q-qcv3) — include the IV in the token envelope HMAC to prevent authentication bypass — was reported by ParkHyunWoo (@hwpark6804-gif) via Patchstack.
 
-= 1.7.4 =
+= 1.8.8 =
 
 ### Patch Changes
 
-- 3bf8104: Added author for FaustWP plugin.
+- cda00de: fix[faustwp]: include the IV in the token envelope HMAC to prevent authentication bypass via IV bit-flipping (GHSA-q6pm-r77q-qcv3)
+
+= 1.8.7 =
+
+### Patch Changes
+
+- ca1e2f4: fix[faustwp]: update documentation links in settings page to use current URL structure
 
 [View the full changelog](https://github.com/wpengine/faustjs/blob/canary/plugins/faustwp/CHANGELOG.md)
