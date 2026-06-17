@@ -9,10 +9,10 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: faustwp
  * Domain Path: /languages
- * Version: 1.8.9
+ * Version: 1.8.11
  * Requires PHP: 7.4
  * Requires at least: 5.7
- * Tested up to: 6.9
+ * Tested up to: 7.0
  *
  * @package FaustWP
  */
@@ -61,7 +61,10 @@ if ( ! is_php_version_compatible( faustwp_minimum_php_requirement() ) ) {
 	return;
 }
 
-// Loads the updater service, if included in this build.
+// Loads the updater service when present. The embedded self-updater files
+// (includes/updates/class-plugin-updater.php and includes/updates/check-for-updates.php)
+// are excluded from the WordPress.org distribution, so the requires below only execute
+// in distributions that ship the external updater.
 if ( file_exists( FAUSTWP_DIR . '/includes/updates/class-plugin-updater.php' ) ) {
 	require FAUSTWP_DIR . '/includes/updates/class-plugin-updater.php';
 }
